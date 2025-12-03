@@ -155,10 +155,10 @@ try {
     if (!empty($roulettePrizes)) {
         $ownTx = !$pdo->inTransaction();
         if ($ownTx) $pdo->beginTransaction();
+        $rouletteTable = getRouletteItemsTableForUser($activation);
 
-        $prizeStmt = $pdo->prepare('INSERT INTO roulette_prize (user_id, prize_token) VALUES (:uid, :token)');
         foreach ($roulettePrizes as $token) {
-            $prizeStmt->execute([':uid' => $userId, ':token' => $token]);
+            awardRoulettePrizeToUser($userId, $token, $rouletteTable, 0);
         }
 
         if ($ownTx) $pdo->commit();
