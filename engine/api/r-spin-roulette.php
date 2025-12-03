@@ -126,75 +126,22 @@ try {
 
     $table = getRouletteItemsTableForUser($uidToken);
 
-    // 2. Получаем информацию о выигранном предмете
-    $stmtItem = $pdo->prepare("SELECT * FROM {$table} WHERE token = :token LIMIT 1");
-    $stmtItem->execute([':token' => $prize]);
-    $item = $stmtItem->fetch(PDO::FETCH_ASSOC);
+    // 2. Начисляем приз и фиксируем в истории
+    $spentToRecord = $isFreeSpin ? 0 : $spent;
 
-    $nftData = null;
-
-    if ($item) {
-        // --- ЛОГИКА НАЧИСЛЕНИЯ ПРИЗА ---
-        $altcoinColumnByType = [
-            'rix_coin' => 'RIXCOIN',
-            'btc'      => 'BINANCE_BTCUSDT',
-            'eth'      => 'BINANCE_ETHUSDT',
-            'usdt'     => 'BINANCE_USDCUSDT',
-        ];
-
-        // А. Обычная валюта или RIXCOIN
-        if (isset($altcoinColumnByType[$item['type']]) && $item['value_amount'] > 0) {
-            $addUserAmount = (int)$item['value_amount'];
-
-            // Если выиграли RIXCOIN, сразу обновим переменную для ответа фронту
-            if ($item['type'] === 'rix_coin') {
-                // Внимание: addUserAltcoinAmount делает UPDATE, но внутри транзакции это безопасно
-                $newVal = addUserAltcoinAmount($user['uid'], 'RIXCOIN', $addUserAmount);
-                if ($newVal !== null) {
-                    $actualUserRixCoins = $newVal;
-                }
-            } else if ($item['type'] === 'usdt') {
-                setUserMoneyById($user['uid'], $addUserAmount);
-            } else {
-                // Другие криптовалюты
-                addUserAltcoinAmount($user['uid'], $altcoinColumnByType[$item['type']], $addUserAmount);
-            }
-        }
-        // 2. ВАРИАНТ А: Если это ФРИСПИНЫ (явная логика)
-        elseif ($item['type'] === 'freespin') {
-            // Начисляем и сразу обновляем переменную для JSON-ответа
-            $actualFreeSpins = setUserFreeSpinsById($user['uid'], (int)$item['value_amount']);
-        }
-
-        // 3. Если это NFT
-        elseif (strpos($item['type'], 'nft_') === 0) {
-            $rarity = str_replace('nft_', '', $item['type']);
-            $nftData = giveRandomNftToUser($user['uid'], $rarity);
-        }
-
-    } else {
-        // Если предмет не найден в базе
+    try {
+        $prizeResult = awardRoulettePrizeToUser($user['uid'], $prize, $table, $spentToRecord);
+    } catch (RuntimeException $e) {
         if ($pdo->inTransaction()) {
             $pdo->rollBack();
         }
+
         http_response_code(418);
-        echo json_encode(['ok'=>true,'error'=>'token_error','message'=>'token is not valid']);
+        echo json_encode(['ok' => true, 'error' => 'token_error', 'message' => $e->getMessage()]);
         exit();
     }
 
-    // 3. Сохраняем в историю
-    // Если это фриспин, в поле spent пишем 0 или можно добавить колонку is_free в историю,
-    // но по текущей логике запишем 0, так как RIXCOIN не тратились.
-    $spentToRecord = $isFreeSpin ? 0 : $spent;
-
-    $stmt = $pdo->prepare(
-        'INSERT INTO roulette_prize (user_id, prize_token, spent) VALUES (:user_id, :prize_token, :spent)'
-    );
-    $stmt->execute([
-        ':user_id'     => $user['uid'],
-        ':prize_token' => $prize,
-        ':spent'       => $spentToRecord,
-    ]);
+    $nftData = $prizeResult['nft'] ?? null;
 
     // 4. Финальная синхронизация балансов перед коммитом
     // На случай если приз изменил балансы, делаем финальный SELECT (опционально, но надежно)

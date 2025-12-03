@@ -669,6 +669,64 @@ function getRoulettePrizesFromPost(string $key = 'roulette_prize'): array
 }
 
 /**
+ * Начисляет приз рулетки пользователю и сохраняет лог в roulette_prize.
+ * Возвращает сведения о призе и, при наличии, данные NFT.
+ *
+ * @throws RuntimeException если передан неизвестный токен или некорректная таблица
+ */
+function awardRoulettePrizeToUser(int $userId, string $token, string $rouletteTable, int $spent = 0): array
+{
+    global $pdo;
+
+    if (!isAllowedRouletteItemsTable($rouletteTable)) {
+        throw new RuntimeException('Invalid roulette table');
+    }
+
+    $itemStmt = $pdo->prepare("SELECT * FROM {$rouletteTable} WHERE token = :token LIMIT 1");
+    $itemStmt->execute([':token' => $token]);
+    $item = $itemStmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$item) {
+        throw new RuntimeException('Unknown roulette prize token: ' . $token);
+    }
+
+    $nftData = null;
+
+    $altcoinColumnByType = [
+        'rix_coin' => 'RIXCOIN',
+        'btc'      => 'BINANCE_BTCUSDT',
+        'eth'      => 'BINANCE_ETHUSDT',
+        'usdt'     => 'BINANCE_USDCUSDT',
+    ];
+
+    if (isset($altcoinColumnByType[$item['type']]) && $item['value_amount'] > 0) {
+        $addUserAmount = (int)$item['value_amount'];
+
+        if ($item['type'] === 'rix_coin') {
+            addUserAltcoinAmount($userId, 'RIXCOIN', $addUserAmount);
+        } else if ($item['type'] === 'usdt') {
+            setUserMoneyById($userId, $addUserAmount);
+        } else {
+            addUserAltcoinAmount($userId, $altcoinColumnByType[$item['type']], $addUserAmount);
+        }
+    } elseif ($item['type'] === 'freespin') {
+        setUserFreeSpinsById($userId, (int)$item['value_amount']);
+    } elseif (strpos($item['type'], 'nft_') === 0) {
+        $rarity = str_replace('nft_', '', $item['type']);
+        $nftData = giveRandomNftToUser($userId, $rarity);
+    }
+
+    $prizeStmt = $pdo->prepare('INSERT INTO roulette_prize (user_id, prize_token, spent) VALUES (:uid, :token, :spent)');
+    $prizeStmt->execute([
+        ':uid'   => $userId,
+        ':token' => $token,
+        ':spent' => $spent,
+    ]);
+
+    return ['item' => $item, 'nft' => $nftData];
+}
+
+/**
  * Помечает запись user_login как скрытую (hide = 1) по её ID.
  *
  * @param int $id
