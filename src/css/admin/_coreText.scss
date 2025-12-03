@@ -1,0 +1,98 @@
+.coreText {
+	border-radius: 3px;
+	border: 1px solid red;
+	padding: 2px;
+	margin-top: 3px;
+}
+
+.coreText_input {
+	display: table;
+	width: 100%;
+	position: relative;
+	font-size: 18px / 16px * 1rem;
+	background: #fff;
+	
+	input[type="text"] {
+		width: 100%;
+		box-sizing: border-box;
+		border: none;
+		border-right: 1px solid #333;
+		font-size: 18px / 16px * 1rem;
+	}
+}
+
+.coreText-item {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	display: table-cell;
+	white-space: nowrap;
+}
+
+.coreText-btn {
+	border: none;
+	background: none;
+	box-sizing: border-box;
+	padding-left: 4px;
+	margin: 0;
+	font-size: 18px / 16px * 1rem;
+	display: inline-block;
+}
+
+.coreText-saved {
+	&:after {
+		display: inline-block;
+		content: '✅';
+		font-size: 16px / 16px * 1rem;
+		padding-right: 4px;
+	}
+}
+
+@keyframes coreText_loadingAnimation {
+	0% {content: '🕛'}
+	8.333333333333334% {content: '🕐'}
+	16.666666666666668% {content: '🕑'}
+	25% {content: '🕒'}
+	33.333333333333336% {content: '🕓'}
+	41.66666666666667% {content: '🕔'}
+	50% {content: '🕕'}
+	58.333333333333334% {content: '🕖'}
+	66.666666666666668% {content: '🕗'}
+	75% {content: '🕘'}
+	83.333333333333334% {content: '🕙'}
+	91.666666666666668% {content: '🕚'}
+}
+
+.coreText-loading {
+	&:after {
+		content: '🕛';
+		display: inline-block;
+		font-size: 16px / 16px * 1rem;
+		padding-right: 4px;
+		animation: {
+			name: coreText_loadingAnimation;
+			duration: 2s;
+			iteration-count: infinite;
+		};
+	}
+}
+
+.coreText_editor {
+	position: relative;
+}
+
+.coreText-editBtn {
+	position: absolute;
+	right: -1px;
+	top: -1px;
+	z-index: 2;
+	//transform: translateY(-50%);
+	border: 1px solid red;
+	border-radius: 3px;
+	font-size: 16px / 16px * 1rem;
+	background: #fff;
+	padding: 0 4px;
+	color: #000;
+	cursor: pointer;
+}

@@ -1,0 +1,73 @@
+<div class="customModal_2">
+    <div class="modal fade activity_modal" id="replenish" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+
+            <div class="modal-content">
+
+                <div class="figure-17"></div>
+
+                <div class="modal-close">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+
+                <div class="modal-body">
+
+                    <div class="modal-title">
+                        <h3>Пополнить</h3>
+                    </div>
+                    
+                    <div class="modal-form">
+                        <div class="form">
+                            <div class="form-group">
+
+                                <div class="modal-select">
+                                    <label for="currency">Выберите валюту</label>
+
+                                    <div class="modal-selectBlock2">
+                                        <select name="currency-2" id="currency-2" class="form-control select-single-2">
+                                            <option value="">Валюта</option>
+                                            <option value="petersburg">Рубли</option>
+                                            <option value="samara">Тенге</option>
+                                            <option value="perm">Доллары</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="modal-select">
+                                    <label for="sum">Введите сумму пополнения</label>
+
+                                    <input type="text" id="sum" class="form-control" placeholder="0.00" value="0.00">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-button">
+                        <button>
+                            <a href="#" class="btn-continue" data-toggle="modal" data-target="#replenishContinue">Продолжить</a>
+                        </button>
+
+                        <button>
+                            <a href="#" class="btn-support">Поддержка</a>
+                        </button>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+{% include  "replenish-continue.twig"%}
+
+
+

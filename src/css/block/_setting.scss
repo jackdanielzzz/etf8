@@ -1,0 +1,93 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.setting{
+  position: relative;
+  height: auto;
+  margin-top: 35px;
+}
+
+.setting-item{
+  background: #003a52;
+  border: 1px solid #074966;
+  padding: 15px;
+  display: block;
+
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.setting-title{
+
+  h5{
+    margin: 0;
+    font-weight: 600;
+    color: #fff;
+    font-size: 21px;
+
+  }
+}
+
+.setting-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.setting-sum{
+
+  p{
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+    display: inline;
+  }
+
+  span{
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+}
+
+.setting-bottom{
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.setting-item + .setting-item{
+  margin-top: 12px;
+}
+
+.setting-link_text{
+
+  p{
+    margin: 0;
+    font-weight: 400;
+    font-size: 15px;
+    color: #fff;
+  }
+}
+
+.setting-link_item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.setting-link_item + .setting-link_item{
+  margin-top: 17px;
+}
+
+.setting-link_icon {
+  min-width: 27px;
+}

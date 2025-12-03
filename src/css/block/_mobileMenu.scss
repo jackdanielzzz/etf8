@@ -1,0 +1,26 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.mobileMenu-burger {
+	button {
+		position: relative;
+		background: #004662;
+	}
+}
+
+.mobileMenu-header {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.mobileMenu-cabinet{
+	a{
+		background: #e0883c;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}

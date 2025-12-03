@@ -1,0 +1,109 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.profile{
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+
+.profile-content{
+  background: #074966;
+
+  padding: 25px 22px 40px 22px;
+}
+
+.profile-title{
+
+  h5{
+
+    margin: 0;
+
+    font-weight: 600;
+    font-size: 21px;
+    color: #fff;
+  }
+}
+
+
+.profile-account{
+  margin-top: 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.profile-account_name{
+
+  span{
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+    display: block;
+    margin-bottom: 7px;
+  }
+
+  p{
+    font-weight: 600;
+    font-size: 23px;
+    color: #fff;
+    margin: 0;
+  }
+}
+
+.profile-account_img{
+  width: 110px;
+  height: 110px;
+  display: block;
+  position: relative;
+
+  img{
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+  }
+}
+
+.profile-download {
+  position: absolute;
+  top: 85px;
+  right: 5px;
+}
+
+.accountBar-file {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.accountBar-fileButton2 {
+  width: 23px;
+  height: 22px;
+  background-image: url('../../img/icons/pencl2.svg');
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.profile-label{
+  font-size: 14px !important;
+}
+
+.profile-width{
+  width: 100%;
+  max-width: 368px;
+}
+
+.profile-button{
+  width: 192px !important;
+  border: 1px solid #e0883c;
+
+  &:hover{
+    background: transparent !important;
+    transition: all .2s;
+    border: 1px solid #fff;
+  }
+}

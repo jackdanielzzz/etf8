@@ -1,0 +1,19 @@
+<html lang="ru">
+	{%  include "head.twig" %}
+	<body>
+	
+	<div class="page">
+
+
+		<div class="page-header">
+			{%  include "../block/header.twig" %}		
+		</div>
+		<div class="page-content">
+			{% block content %}{% endblock %}
+		</div>
+		<div class="page-footer">
+			{%  include "../block/footer.twig" %}
+		</div>
+	</div>
+	</body>
+</html>

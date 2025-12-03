@@ -1,0 +1,159 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.tabs-3{
+  position: relative;
+  height: auto;
+  margin-top: 15px;
+}
+
+.tabs-3{
+  background: #074966;
+  padding: 25px 25px 200px 25px;
+
+  @include media-max(sm){
+    background: transparent;
+    padding: 0;
+  }
+}
+
+.tabs-3_background{
+
+  @include media-max(sm){
+    background: #074966;
+    padding: 30px 15px;
+  }
+
+}
+
+.tabs-3_title{
+  h5{
+    margin: 0;
+
+    font-weight: 600;
+    font-size: 21px;
+    color: #fff;
+  }
+}
+
+.tabs-3_description{
+
+  margin-top: 20px;
+
+  @include media-max(sm){
+    margin-top: 30px;
+  }
+
+  p{
+    margin: 0;
+    font-weight: 400;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+}
+
+.tabs-3_promo{
+  margin-top: 25px;
+
+  @include media-max(sm){
+    margin-top: 35px;
+  }
+}
+
+.tabs-3_item{
+  background: #044059;
+  border: 1px solid #074966;
+  padding: 15px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+
+  @include media-max(md){
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  @include media-max(sm){
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+}
+
+.tabs-3_rightTitle{
+
+  h5{
+    margin: 0;
+    font-weight: 600;
+    font-size: 21px;
+    color: #fff;
+  }
+}
+
+.tabs-3_rightDescription{
+
+  margin-top: 15px;
+
+  @include media-max(sm){
+    margin-top: 5px;
+  }
+
+  p{
+    margin: 0;
+    font-weight: 300;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.55);
+
+  }
+}
+
+.tabs-3_img{
+
+  width: 290px;
+
+  @include media-max(md){
+    width: auto;
+  }
+
+  img{
+    width: 100%;
+    min-height: auto;
+    object-fit: cover;
+  }
+}
+
+.tabs-3_left{
+
+  @include media-max(sm){
+    width: 100%;
+  }
+}
+
+.tabs-3_item + .tabs-3_item{
+  margin-top: 20px;
+
+  @include media-max(sm){
+    margin-top: 40px;
+  }
+}
+
+.tabs-3_rightDescription h6 {
+  margin: 0.6em 0 0.4em;
+  color: rgba(255,255,255,0.55);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.tabs-3_rightDescription ul {
+  margin: 0;
+  padding-left: 1.2em;     // отступ под маркеры
+  list-style: disc;
+  color: rgba(255,255,255,0.55);
+}
+
+.tabs-3_rightDescription ul li {
+  margin-bottom: 0.4em;
+}

@@ -1,0 +1,168 @@
+{% extends "layout/login.twig" %}
+
+{% block content %}
+
+    <div class="figure-3"></div>
+    <div class="figure-4"></div>
+
+    <div class="content">
+
+        <div class="formLogin-flex">
+            <div class="formLogin">
+
+                <ul class="nav nav-tabs" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-login-tab" data-toggle="pill" data-target="#pills-login" type="button" role="tab" aria-controls="pills-login" aria-selected="true">login</button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-registration-tab" data-toggle="pill" data-target="#pills-registration" type="button" role="tab" aria-controls="pills-registration" aria-selected="false">registration</button>
+                    </li>
+
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+                        <form action="">
+
+                            <div class="form-group">
+
+                                <div class="input-container">
+                                    <label for="email" class="placeholder">Email</label>
+                                    <input id="email" class="input" type="text" placeholder=" " />
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <label for="form_password"  class="placeholder">Your password</label>
+                                    <input id="form_password" class="input" type="password" placeholder=" " />
+
+
+                                    <button class="pass password-visible"></button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                        <div class="formLogin-button">
+                            <button>
+                                <a href="#" class="btn-sign">Sign in</a>
+                            </button>
+
+                            <button>
+                                <a href="#" class="btn-pass">Forgot your password?</a>
+                            </button>
+                        </div>
+
+                        <div class="formLogin-sign">
+                            <a href="#">Sign up</a>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-registration" role="tabpanel" aria-labelledby="pills-registration-tab">
+                        <form action="">
+
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <label for="name" class="placeholder">Your Name</label>
+                                    <input id="name" class="input" type="text" placeholder=" " />
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <label for="lastName" class="placeholder">Your Last Name</label>
+                                    <input id="lastName" class="input" type="text" placeholder=" " />
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <label for="surName" class="placeholder">Your Surname</label>
+                                    <input id="surName" class="input" type="text" placeholder=" " />
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <label for="Email" class="placeholder">Email</label>
+                                    <input id="Email" class="input" type="email" placeholder=" " />
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <label for="create_password"  class="placeholder">Create password</label>
+                                    <input id="create_password" class="input" type="password" placeholder=" " />
+
+
+                                    <button class="pass2 password-visible2"></button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <label for="confirm_password"  class="placeholder">Confirm password</label>
+                                    <input id="confirm_password" class="input" type="password" placeholder=" " />
+
+
+                                    <button class="pass3 password-visible3"></button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <label for="phone" class="placeholder">Your Phone</label>
+                                    <input id="phone" class="input" type="tel" placeholder=" " />
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-container">
+
+                                    <label class="select-label">How to contact you</label>
+
+                                    <select class="input">
+
+
+                                        <option class="option-form" value="value1">Telegram</option>
+                                        <option class="option-form" value="value2">WhatsApp</option>
+                                        <option class="option-form"value="value3">Instagram</option>
+
+                                    </select>
+
+                                </div>
+                            </div>
+
+                        </form>
+
+                        <div class="formLogin-button">
+                            <button>
+                                <a href="#" class="btn-sign">Sign in</a>
+                            </button>
+
+                            <button>
+                                <a href="#" class="btn-pass">Already have an account?</a>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}

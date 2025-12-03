@@ -1,0 +1,116 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.plan{
+  position: relative;
+  height: auto;
+
+  background: #004662;
+
+  padding: 90px 0 120px 0;
+
+  @include media-max(md){
+    padding: 90px 0;
+  }
+}
+
+.plan-title{
+  h2{
+    margin: 0;
+
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+
+    span{
+      color: #e0883c;
+    }
+  }
+}
+
+.plan-block{
+  margin-top: 100px;
+}
+
+.plan-block_title{
+
+  h5{
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7);
+
+  }
+}
+
+.plan-block_text{
+
+  p{
+    margin: 0;
+    font-weight: 300;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.plan-block_item {
+  width: 100%;
+  max-width: 345px;
+  position: relative;
+  z-index: 1061;
+
+  @include media-max(sm){
+    max-width: 100%;
+  }
+
+  &::before{
+    content: "";
+
+    background-image: url("../../img/icons/plan.svg");
+    width: 298px;
+    height: 242px;
+    display: block;
+    position: absolute;
+    top: -80px;
+    z-index: -1;
+    left: -60px;
+  }
+}
+
+.plan-block {
+  margin-top: 150px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+
+  @include media-max(lg){
+    flex-wrap: wrap;
+  }
+
+  @include media-max(md){
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 110px;
+  }
+}
+
+.plan-block_item:last-child{
+
+  @include media-max(lg){
+    margin-top: 150px;
+  }
+
+  @include media-max(md){
+    margin-top: 130px;
+  }
+
+}
+
+.plan-block_item:nth-of-type(2){
+
+  @include media-max(md){
+    margin-top: 130px;
+  }
+}

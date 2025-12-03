@@ -1,0 +1,261 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.verification{
+  position: relative;
+}
+
+.verification-content{
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.verification-title{
+  font-weight: 500;
+  font-size: 29px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+
+.verification-file{
+  width: 100%;
+  max-width: 1050px;
+  margin: 60px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+
+  @include media-max(sm){
+    grid-template-columns: repeat(1, 1fr);
+    margin: 30px auto 0;
+  }
+}
+
+.verification-item{
+  background: #004663;
+  position: relative;
+  padding: 20px 55px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media-max(md){
+    padding: 20px 15px 30px;
+  }
+}
+
+.verification-number{
+  span{
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    color: #e0883c;
+    display: block;
+  }
+}
+
+.verification-text{
+
+  margin-top: 15px;
+
+  p{
+    margin: 0;
+
+    font-weight: 300;
+    font-size: 16px;
+    color: #fff;
+  }
+}
+
+.verification-caption{
+  margin-top: 20px;
+
+  span{
+    display: block;
+
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    color: #fff;
+    opacity: .34;
+
+    max-width: 280px;
+  }
+}
+
+.verification-select{
+  margin-top: 25px;
+}
+
+.custom-file {
+  color: transparent;
+  width: 171px;
+  height: 62px;
+  position: relative;
+  background: #033f58;
+}
+
+.custom-file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.custom-file::before {
+  content: 'Select a file';
+  color: white;
+  display: flex;
+  align-items: center;
+
+  background-image: url("../../img/icons/select.svg");
+  background-repeat: no-repeat;
+  border: 1px solid #033f58;
+  padding-left: 65px;
+  height: 100%;
+  background-position: 30px;
+
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+
+}
+
+.custom-file_success::before{
+  content: 'File selected';
+  background-image: url("../../img/icons/succes-select.svg");
+  background-position: 25px;
+  border: 1px solid #e0883c;
+}
+
+.custom-file:active {
+  outline: 0;
+}
+
+.verification-overlay {
+  position: fixed;
+  inset: 0;                       // top/right/bottom/left: 0;
+  background: rgba(0, 0, 0, .55); // тёмный полупрозрачный фон
+  display: grid;                  // лёгкий способ центрирования
+  place-items: center;            // вертикаль + горизонталь
+  z-index: 1050;                  // поверх всего
+}
+
+/* ---------- сама карточка ---------- */
+.verification-success {
+  width: 100%;
+  max-width: 500px;               // ± ширина как на 2-м скрине
+  background: #063c59;            // «синий» из макета
+  border-radius: 12px;
+  padding: 40px 48px 32px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .25);
+
+  &__icon {
+    margin-bottom: 24px;
+
+    i {
+      font-size: 56px;            // крупный тик-икон
+      color: #ff9a3a;             // оранж из кнопки
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.45;
+    margin: 0 0 28px;
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    background: #ff8725;
+    border: 0;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: filter .15s;
+
+    &:hover { filter: brightness(1.06); }
+  }
+}
+
+/* ---------- запретить прокрутку, пока открыт оверлей ---------- */
+body.verification-lock { overflow: hidden; }
+
+/* ---------- адаптив: чуть меньше отступы на мобильных ---------- */
+@media (max-width: 480px) {
+  .verification-success {
+    padding: 32px 24px 24px;
+    border-radius: 10px;
+
+    &__icon { margin-bottom: 20px; }
+    &__text { font-size: 15px; margin-bottom: 24px; }
+  }
+}
+
+.verification-success_text{
+  margin-top: 20px;
+  p{
+    margin: 0;
+    font-weight: 300;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    opacity: 0.85;
+  }
+}
+
+/* ---------- центрируем кружок с галкой ---------- */
+.verification-success__icon {
+  width: 72px;               // диаметр
+  height: 72px;
+  margin: 0 auto 24px;       // центр + отступ снизу
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 2) Сброс абсолютов и настройка спрайта */
+.verification-success__icon .icon-successBig {
+  position: static !important;       // сброс абсолютного позиционирования
+  display: block;                    // блочный, чтобы можно было задать ширину/высоту
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;      // запрет тайлов
+  background-position: center;       // центрируем картинку внутри
+  background-size: cover;            // растягиваем, чтобы покрыть весь контейнер
+}
+
+.verification-success_button{
+  margin-top: 20px;
+  width: 100%;
+  display: block;
+
+  button{
+    background: #e0883c;
+    border: 1px solid #e0883c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 62px;
+    width: 100%;
+    font-weight: 800;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 1 !important;
+
+    &:hover{
+      color: #fff !important;
+    }
+  }
+}
+

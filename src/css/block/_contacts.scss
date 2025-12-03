@@ -1,0 +1,140 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.contacts{
+  position: relative;
+  height: auto;
+
+  padding: 112px 0 105px 0;
+
+  @include media-max(md){
+    padding: 80px 0 100px 0;
+  }
+}
+
+.contacts-left{
+  width: 100%;
+  max-width: 520px;
+  margin-right: 90px;
+
+  @include media-max(sm){
+    max-width: none;
+    margin-right: 0;
+  }
+}
+
+.contacts-left_title{
+
+  h2{
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+
+    span{
+      color: #e0883c;
+    }
+  }
+}
+
+.contacts-left_text{
+
+  margin-top: 70px;
+
+  @include media-max(sm){
+    margin-top: 40px;
+  }
+
+  p{
+    margin: 0;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 161%;
+    color: rgba(255, 255, 255, 0.7);
+
+  }
+}
+
+.contacts-left_support{
+  margin-top: 37px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.contacts-left_caption{
+
+  span{
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 137%;
+    text-transform: uppercase;
+    color: #fff;
+  }
+}
+
+.contacts-right{
+  width: 100%;
+
+  @include media-max(lg){
+    margin-top: 50px;
+  }
+}
+
+.contacts-right form label{
+  font-weight: 400;
+  font-size: 15px;
+  color: #fff;
+}
+
+.contacts-right form .form-group{
+  margin-bottom: 40px;
+}
+
+.contacts-content {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+
+  @include media-max(lg){
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+.contacts-right form textarea{
+  resize: none;
+}
+
+.btn-form{
+  font-weight: 700;
+  font-size: 15px;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #fff;
+
+  background: #e0883c;
+  border: 1px solid #e0883c;
+  height: 62px;
+  width: 187px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 60px;
+
+  &:hover{
+    transition: all .2s;
+    background: transparent;
+    border: 1px solid #e0883c;
+    color: white;
+    text-decoration: none;
+  }
+}
+

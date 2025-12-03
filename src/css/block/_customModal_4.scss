@@ -1,0 +1,147 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+.customModal_4{
+  position: relative;
+  height: auto;
+
+  .modal-body{
+    padding: 0;
+  }
+
+  .modal-dialog{
+    max-width: 851px;
+    margin: 1.75rem auto;
+
+    @include media-max(md){
+      max-width: 350px;
+    }
+  }
+
+  .modal-content{
+    background:  #074966;
+    padding: 50px 55px 70px 55px;
+    border: none;
+    border-radius: 0;
+
+    @include media-max(md){
+      padding: 40px 15px 70px 15px;
+    }
+  }
+
+  .modal-title{
+    h3{
+      margin: 0;
+      font-weight: 500;
+      font-size: 36px;
+      text-transform: uppercase;
+      text-align: center;
+      color: #fff;
+
+    }
+  }
+
+  .modal-button_item{
+
+    position: relative;
+
+    a{
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.33);
+      background: #005e87;
+      width: 360px;
+      height: 248px;
+      position: relative;
+
+      @include media-max(md){
+        width: 316px;
+        height: 248px;
+      }
+
+
+
+      &:hover{
+        text-decoration: none;
+        background: #005479;
+        transition: all .2s;
+        border: 2px solid #e0883c;
+      }
+
+      &::before{
+        content: "";
+        border: 2px solid #e0883c;
+        width: 82px;
+        position: absolute;
+        top: 0;
+      }
+
+      &:hover::before{
+        border: none;
+      }
+
+      span{
+        margin: 0;
+        display: block;
+        font-weight: 400;
+        font-size: 17px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+      }
+
+      p{
+        margin: 0;
+        display: block;
+        font-weight: 700;
+        font-size: 44px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+
+  .modal-button{
+    margin-top: 60px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include media-max(md){
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  }
+
+
+  .modal-button__arbitration{
+    margin-top: 60px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include media-max(lg){
+     flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      gap: 30px;
+    }
+  }
+
+  .modal-button__arbitration .modal-button_item a p{
+    font-size: 16px;
+  }
+
+  .modal-button__arbitration .modal-button_item a {
+    height: 130px;
+  }
+
+}

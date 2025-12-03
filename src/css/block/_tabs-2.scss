@@ -1,0 +1,380 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.tabs-2{
+  position: relative;
+  height: auto;
+}
+
+.tabs-2_top {
+  position: relative;
+  background: #074966;
+  padding: 25px;
+  display: flex;
+  align-items: flex-start;
+
+  @include media-max(md){
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.tabs-2_item{
+
+  @include media-max(md){
+    width: 100%;
+  }
+
+  h4{
+    font-weight: 600;
+    font-size: 21px;
+    color: #fff;
+    margin: 0;
+  }
+
+  h5{
+    margin: 0;
+    font-weight: 500;
+    font-size: 26px;
+    color: #fff;
+  }
+}
+
+.tabs-2_linkText{
+
+  a{
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 185px;
+    display: inline-block;
+    vertical-align: middle;
+
+    //display: inline;      /* ссылка растянется по содержимому */
+    //width: auto;          /* убираем жёсткое ограничение */
+    //overflow: visible;    /* показываем всё на любой длине */
+    //white-space: nowrap;  /* если нужен один рядок без переноса */
+    //text-overflow: clip;  /* отключаем многоточие */
+  }
+}
+
+.tabs-2_link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tabs-2_text{
+
+  p{
+    margin: 0;
+    display: inline;
+
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  span{
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+}
+
+.tabs-2_sum {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.line-left {
+  border-left: 1px solid rgba(255, 255, 255, .07);
+  height: 155px;
+  display: block;
+  margin: 0 80px 0 110px;
+
+  @include media-max(md){
+    border-left: none;
+    height: auto;
+    margin: 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, .07);
+  }
+}
+
+.tabs-2_centerTop{
+  background: #044059;
+  padding: 25px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.tabs-2_centerTop__item{
+
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 50px;
+
+  @include media-max(md){
+    gap: 0;
+    flex-direction: column;
+    background: transparent;
+    padding: 0;
+    margin-top: 30px;
+  }
+}
+
+.tabs-2_centerItem{
+
+  p{
+    margin: 0;
+    display: inline;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  span{
+    margin: 0;
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+
+    @include media-max(sm){
+      display: inline;
+    }
+  }
+}
+
+.tabs-2_centerItem + .tabs-2_centerItem{
+  @include media-max(md){
+    margin-top: 25px;
+  }
+}
+
+.tabs-2_centerBottom{
+  background: #074966;
+  border-top: 1px solid rgba(255, 255, 255, 0.11);
+  width: 100%;
+  padding: 25px;
+
+  @include media-max(md){
+    margin-top: 20px;
+    border-top: none;
+  }
+}
+
+.tabs-2_bottomTitle{
+  h5{
+    margin: 0;
+    font-weight: 500;
+    font-size: 15px;
+    color: #fff;
+  }
+}
+
+.tabs-2_bottomItem{
+
+  p{
+    margin: 0;
+    display: inline;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  span{
+    margin: 0;
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+    padding-left: 10px;
+  }
+}
+
+.tabs-2_bottomBlock {
+  margin-top: 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+
+  @include media-max(md){
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin-top: 25px;
+  }
+}
+
+.tabs-2_bottomItem + .tabs-2_bottomItem{
+  @include media-max(md){
+    margin-top: 15px;
+  }
+}
+
+.tabs-2_table{
+
+  border: 1px solid #074966;
+  background: #044059;
+  padding: 25px 25px 80px 25px;
+  margin-top: 80px;
+}
+
+.tabs-2_table-title{
+
+  h5{
+    margin: 0;
+    font-weight: 600;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+}
+
+.tabs-2_tableText{
+
+  p{
+    margin: 0;
+    display: inline;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  span{
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+}
+
+.tabs-2_tableBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tabs-2_team{
+  margin-top: 40px;
+  overflow: auto;
+  white-space: nowrap;
+  width: 100%;
+
+  table{
+    width: 100%;
+    border-spacing: 0 10px;
+    border-collapse: separate;
+
+    thead{
+
+
+
+      tr{
+        th{
+          font-weight: 600;
+          font-size: 15px;
+          color: #fff;
+          margin: 0;
+          padding: 13px 8px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          white-space: nowrap;
+
+          &:last-child{
+            display: flex;
+            justify-content: flex-end;
+            width: auto;
+          }
+
+          &:nth-of-type(1){
+            width: 18%;
+          }
+
+          &:nth-of-type(2){
+            width: 33%;
+            min-width: 200px;
+          }
+
+          &:nth-of-type(3){
+            width: 100%;
+          }
+
+        }
+      }
+    }
+
+    tbody{
+
+      tr{
+
+        background: #034360;
+
+        td{
+          font-weight: 600;
+          font-size: 16px;
+          color: rgba(255, 255, 255, 0.55);
+          margin: 0;
+          padding: 15px 8px;
+          white-space: nowrap;
+          min-width: 120px;
+
+          &:last-child{
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+      }
+
+    }
+
+
+  }
+}
+
+.tabs-2_item__button{
+
+  margin-top: 25px;
+
+  a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .29);
+    height: 54px;
+
+    &:hover{
+      border: 1px solid #e0883c;
+      background: #e0883c;
+      transition: all .2s;
+      text-decoration: none;
+    }
+  }
+}
+
+.tabs-2__conditions{
+  margin-top: 35px;
+
+  p{
+    margin-bottom: 10px;
+  }
+}

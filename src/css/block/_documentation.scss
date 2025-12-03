@@ -1,0 +1,102 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.documentation{
+  position: relative;
+  height: auto;
+
+
+  padding: 120px 0 150px 0;
+
+  @include media-max(md){
+    padding: 80px 0 130px 0;
+  }
+
+  &::before{
+    content: "";
+    background-image: url("../../img/docIMg.png");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.documentation-left{
+  width: 100%;
+  max-width: 485px;
+
+  @include media-max(md){
+    max-width: 100%;
+  }
+}
+
+.documentation-title{
+
+  h2{
+    margin: 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+
+  }
+}
+
+.documentation-text{
+
+  margin-top: 55px;
+
+  @include media-max(md){
+    margin-top: 45px;
+  }
+
+  p{
+    font-weight: 300;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+
+.documentation-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @include media-max(lg){
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+.documentation-right {
+  width: 100%;
+  max-width: 390px;
+  position: relative;
+
+  @include media-max(lg){
+    margin-top: 45px;
+  }
+
+  @include media-max(md){
+    margin: 45px auto 0;
+  }
+}
+
+.document-slider .slick-slide img{
+  @include media-max(sm){
+    width: 100%;
+    object-fit: cover;
+    min-height: auto;
+  }
+}

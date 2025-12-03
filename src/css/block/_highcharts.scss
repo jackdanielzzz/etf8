@@ -1,0 +1,64 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.highcharts-block{
+  margin: 0;
+}
+
+.highcharts-credits{
+  display: none;
+}
+
+.highcharts-data-label-connector{
+  display: none;
+}
+
+.highcharts-data-label{
+  display: none;
+}
+
+.highcharts-point.highcharts-color-0{
+  fill: #FA2256;
+  filter: drop-shadow(2px 6px 11px rgba(250, 34, 86, .55));
+
+}
+
+.highcharts-point.highcharts-color-1{
+  fill: #E28D44;
+  filter: drop-shadow(2px 2px 4px rgba(247, 147, 26, 0.55));
+}
+
+.highcharts-point.highcharts-color-2{
+  fill: #30E0A1;
+  filter: drop-shadow(2px 2px 4px rgba(48, 224, 161, 0.55));
+}
+
+.highcharts-background{
+  fill: none;
+}
+
+.highcharts-point{
+
+}
+
+.total-graphic{
+  position: relative;
+}
+
+.total-circle{
+  &::before{
+    content: '';
+    border: 2px dashed rgba(255, 255, 255, .21);
+    width: 110px;
+    height: 110px;
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    top: 26px;
+    left: 30px;
+  }
+}
+
+.highcharts-title{
+  display: none;
+}

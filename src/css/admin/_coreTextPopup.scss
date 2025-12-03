@@ -1,0 +1,30 @@
+.coreTextPopup {
+	position: fixed;
+	z-index: 10000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	
+	background: rgba(#000, .95);
+}
+
+.coreTextPopup-content {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 30px 10px 10px;
+}
+
+.coreTextPopup-body {
+	flex: 1;
+	textarea {
+		box-sizing: border-box;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.coreTextPopup-footer {
+	text-align: right;
+}

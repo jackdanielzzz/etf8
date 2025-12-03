@@ -1,0 +1,244 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.account{
+  position: relative;
+  height: auto;
+  margin-top: 50px;
+}
+
+.disabled_link{
+  pointer-events: none;
+  color: #aaa !important;
+}
+
+.accountBar {
+  padding: 30px 0;
+}
+
+.accountBar-title{
+
+  h5{
+    margin: 0;
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+
+  }
+}
+
+.accountBar-profile{
+  margin-top: 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.accountBar-profile_name{
+
+  span{
+    font-weight: 400;
+    font-size: 10px;
+    color: #fff;
+    display: block;
+    margin-bottom: 7px;
+  }
+
+  p{
+    font-weight: 600;
+    font-size: 17px;
+    color: #fff;
+    margin: 0;
+  }
+}
+
+.accountBar-profile_img{
+  width: 87px;
+  height: 87px;
+  display: block;
+  position: relative;
+
+  img{
+    width: 87px;
+    height: 87px;
+    object-fit: cover;
+  }
+}
+
+.accountBar-download {
+  position: absolute;
+  top: 63px;
+  right: 3px;
+}
+
+.accountBar-file {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.accountBar-fileButton {
+  width: 23px;
+  height: 22px;
+  background-image: url('../../img/icons/pencl.svg');
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+
+.accountBar-form{
+  margin-top: 30px;
+
+  label{
+    font-weight: 600;
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 12px;
+    padding-left: 20px;
+  }
+
+  .form-control{
+    background: #034360;
+    border: 0.87px solid rgba(255, 255, 255, 0.29);
+    height: 45px;
+    font-weight: 600;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.57);
+    padding-left: 20px;
+    border-radius: 0;
+    position: relative;
+
+    &:focus{
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.accountBar_button{
+  background: #e0883c !important;
+  height: 54px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 30px;
+}
+
+.accountBar-state{
+  margin-top: 40px;
+}
+
+.accountBar-state_title{
+  h4{
+    margin: 0;
+    font-weight: 600;
+    color: #fff;
+  }
+}
+
+.accountBar-state_top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.accountBar-state_bottom{
+  margin-top: 30px;
+}
+
+.accountBar-item_text{
+
+  p{
+    margin: 0;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  span{
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  a{
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.78);
+
+    &:hover{
+      text-decoration: none;
+    }
+
+  }
+
+  .state_a{
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    color: #fff;
+  }
+}
+
+.accountBar-state_item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.accountBar-state_item + .accountBar-state_item{
+  margin-top: 20px;
+}
+
+.accountBar-exit{
+  margin-top: 40px;
+  display: flex;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+
+  align-items: center;
+  gap: 20px;
+
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.accountBar-exit_text{
+
+  p{
+    margin: 0;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+
+  }
+}
+
+.accountBar-item_icon {
+  background: #074966;
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accountBar-exit_icon {
+  background: #074966;
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

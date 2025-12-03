@@ -1,0 +1,48 @@
+.adminTb1 {
+	border-collapse: collapse;
+	td {
+		padding: 4px 16px;
+	}
+
+	&._zebra {
+		tr {
+			&:nth-of-type(2n+2) {
+				td {
+					background: #eee;
+				}
+			}
+		}
+	}
+}
+
+.engineItemForm {
+	label, .label {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.label {
+		label {
+			display: inline-block;
+			margin-left: 10px;
+		}
+	}
+}
+
+.sys_edit_area {
+	input[type=text] {
+		border: 1px solid #333;
+		box-sizing: border-box;
+		width: 99%;
+	}
+}
+
+@import "admin/coreText";
+@import "admin/coreTextPopup";
+@import "admin/adminTop";
+@import "admin/adminBtn";
+@import "admin/adminTable";
+@import "admin/adminForm";
+@import "admin/exit";
+@import "admin/coreMenuAdmin";
+@import "admin/coreIFramePopup";

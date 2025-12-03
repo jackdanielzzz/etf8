@@ -1,0 +1,69 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.desktopMenu {
+}
+
+.desktopMenu-ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+.desktopMenu-li {
+	list-style: none;
+	position: relative;
+
+
+	a {
+		font-size: rem(15px);
+		color: white;
+		text-decoration: none;
+		font-weight: 600;
+
+
+		&:hover {
+			color: #e0883c;
+			transition: .2s all;
+		}
+
+		&::before {
+			content: "";
+			border-top: none;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			margin: -37px 0px;
+		}
+
+		&:hover::before {
+			content: "";
+			border: 3px solid #e0883c;
+			width: 100%;
+			position: absolute;
+			top: -6px;
+		}
+	}
+}
+
+.desktopMenu-li + .desktopMenu-li {
+	margin-left: 35px;
+
+	@include media-max(xl){
+		margin-left: 25px;
+	}
+}
+
+
+.desktopMenu_active a {
+	color: #e0883c;
+
+	&::before {
+		content: "";
+		border: 3px solid #e0883c;
+		width: 100%;
+		position: absolute;
+		top: -6px;
+	}
+}
+

@@ -1,0 +1,142 @@
+@keyframes shake {
+	0% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(-2px);
+	}
+	75% {
+		transform: translateX(2px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+
+@keyframes appear {
+	from {
+		opacity: 0;
+		transform: scale(.5);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes appear-lt {
+	from {
+		opacity: 0;
+		transform: translateX(-100px) translateY(-100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0) translateY(0);
+	}
+}
+
+@keyframes appear-rt {
+	from {
+		opacity: 0;
+		transform: translateX(100px) translateY(-100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0) translateY(0);
+	}
+}
+
+@keyframes appear-lb {
+	from {
+		opacity: 0;
+		transform: translateX(-100px) translateY(100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0) translateY(0);
+	}
+}
+
+@keyframes appear-rb {
+	from {
+		opacity: 0;
+		transform: translateX(100px) translateY(100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0) translateY(0);
+	}
+}
+
+
+
+@import "bootstrap";
+@import "bootstrap-init";
+@each $breakpoint in map-keys($grid-breakpoints) {
+	$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+	
+	$animPositions: '', '-lt', '-rt', '-lb', '-rb'; 
+	@each $animPosition in $animPositions {
+		@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+			.appear#{$infix}#{$animPosition} {
+				animation: {
+					name: appear#{$animPosition};
+					duration: 1s;
+					fill-mode: both;
+				};
+			}
+		}
+	}
+}
+
+@for $i from 0 through 10 {
+	.appear-duration-#{$i} {
+		animation: {
+			duration: #{$i*.25}s;
+		};
+	}
+}
+
+@for $i from 0 through 10 {
+	.appear-delay-#{$i} {
+		animation: {
+			delay: #{$i*.25}s;
+		};
+	}
+}
+
+@keyframes slideDown {
+	0% {
+		max-height: 0;
+	}
+
+	99.99% {
+		max-height: 100vh;
+	}
+
+	100% {
+		max-height: none;
+	}
+}
+
+@keyframes slideUp {
+	0% {
+		max-height: 100vh;
+	}
+
+	100% {
+		max-height: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

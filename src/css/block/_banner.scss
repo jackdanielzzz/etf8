@@ -1,0 +1,122 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.banner{
+  position: relative;
+  height: auto;
+
+}
+
+.banner-content {
+  width: 100%;
+  max-width: 860px;
+  height: 595px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  @include media-max(md){
+    max-width: 100%;
+  }
+}
+
+.banner-title{
+  h1{
+    margin: 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+
+    span{
+      color: #e0883c;
+    }
+  }
+}
+
+.banner-text{
+
+  margin-top: 40px;
+
+  @include media-max(sm){
+    margin-top: 20px;
+  }
+
+  p{
+    margin: 0;
+
+    font-weight: 300;
+    font-size: rem(16px);
+    color: #fff;
+  }
+}
+
+.banner-button{
+  margin-top: 50px;
+  display: flex;
+  align-items: baseline;
+
+  @media (max-width: 390px){
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  button{
+    font-weight: 700;
+    font-size: rem(16px);
+    line-height: 132%;
+    text-transform: uppercase;
+
+    @media (max-width: 390px){
+      width: 100%;
+    }
+
+    a{
+      color: #fff;
+
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.btn-noOrange{
+  border: 1px solid #fff;
+  padding: 0 45px;
+  height: 62px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media-max(sm){
+    padding: 0 20px;
+  }
+
+  &:hover{
+    border: 1px solid #e0883c;
+    background: #e0883c;
+    transition: all .2s;
+  }
+}
+
+.btn-orange{
+  border: 1px solid #e0883c;
+  padding: 0 45px;
+  height: 62px;
+  background: #e0883c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media-max(sm){
+    padding: 0 20px;
+  }
+
+  &:hover{
+    border: 1px solid #fff;
+    background: transparent;
+    transition: all .2s;
+  }
+}

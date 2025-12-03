@@ -1,0 +1,163 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.bondToken{
+  position: relative;
+  height: auto;
+}
+
+.bondToken-content{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+
+  @media (max-width: 1165px){
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+}
+
+.bondToken-content__item {
+  background: #004662;
+  padding: 10px 25px;
+  border: 1px solid #fff;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 548px;
+}
+
+.bondToken-content__span{
+  font-size: 16px;
+  display: inline-block;
+  background: #e0883c;
+  padding: 3px 5px;
+}
+
+.bondToken-content__title{
+  margin-bottom: 0;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.bondToken-content__price{
+  margin-top: 40px;
+
+  p{
+    font-size: clamp(20px, 4vw, 26px);
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  span{
+    display: inline-block;
+    font-size: 16px;
+    color: rgba(255, 255, 255, .61);
+  }
+}
+
+.bondToken-content__subtitle{
+  margin-top: 40px;
+  margin-bottom: 0;
+  font-weight: 400;
+  color: rgba(255, 255, 255, .61);
+}
+
+.bondToken-content__details{
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px;
+
+  @media (max-width: 420px){
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  p{
+    margin-bottom: 0;
+    font-size: clamp(20px, 4vw, 26px);
+  }
+
+  span{
+    display: inline-block;
+    font-size: 16px;
+    color: rgba(255, 255, 255, .61);
+  }
+}
+
+.bondToken-content__details_2{
+  display: flex;
+  align-items: flex-start;
+  margin-top: 25px;
+
+  @media (max-width: 420px){
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  p{
+    margin-bottom: 10px;
+    font-size: clamp(20px, 4vw, 26px);
+  }
+
+  span{
+    display: inline-block;
+    font-size: 16px;
+    color: rgba(255, 255, 255, .61);
+  }
+}
+
+.bondToken-content__left{
+  min-width: 250px;
+
+  @include media-max(sm){
+    min-width: 210px;
+  }
+}
+
+.bondToken-content__pdf{
+
+  margin-top: 50px;
+
+  a{
+    display: block;
+    color: white;
+    font-size: 16px;
+  }
+}
+
+.bondToken-content__link{
+  background: #03374d;
+  padding: 10px 25px;
+  position: relative;
+  top: 10px;
+  margin-left: -25px;
+  margin-right: -25px;
+  a{
+    display: block;
+    color: white;
+    font-size: 16px;
+  }
+}
+
+.bondToken-title{
+
+  margin-bottom: 35px;
+
+  h2{
+    margin: 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+
+    span{
+      color: #e0883c;
+      display: block;
+    }
+  }
+}

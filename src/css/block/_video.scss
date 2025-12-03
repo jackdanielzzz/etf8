@@ -1,0 +1,98 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.video{
+  position: relative;
+  z-index: 1;
+}
+
+.video-text{
+  #text{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+}
+
+#video-play{
+  width: 100%;
+  min-height: 320px;
+  height: 720px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  @include media-max(sm){
+    height: auto;
+  }
+
+
+  #fullSizeVideo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include media-max(xl){
+      object-fit: contain;
+    }
+  }
+}
+
+
+
+.video-button{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button{
+    background-image: url("../img/icons/play.png");
+    background-repeat: no-repeat;
+    width: 124px;
+    height: 123px;
+    transition: all .2s;
+
+    @media (pointer:fine){
+      &:hover{
+        transform: scale(.9);
+      }
+    }
+
+    @include media-max(md){
+      background-size: cover;
+      width: 100px;
+      height: 100px;
+    }
+
+    @include media-max(sm){
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+
+}
+
+#video-overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 998;
+  background-image: url("../../img/poster.jpg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

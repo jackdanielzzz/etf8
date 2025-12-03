@@ -1,0 +1,63 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+#preloader{
+  background-color: #003a52;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1051;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.visible_preloader {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+
+.hidden_preloader {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}
+
+.preloader-logo{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+
+
+
+}
+
+.type-wrap{
+  color: white;
+}
+
+.typed-cursor{
+  margin-left: 3px;
+  color: orange;
+  font-weight: 700;
+  font-size: 20px;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  -ms-animation: blink 0.7s infinite;
+  -o-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+span#typed {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}

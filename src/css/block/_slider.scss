@@ -1,0 +1,74 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+
+.arrowIndex {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  position: absolute;
+  top: -20px;
+  right: 15px;
+
+  @include media-max(sm){
+    top: auto;
+    bottom: -70px;
+  }
+}
+
+
+.prev-index{
+  background-image: url("../../img/icons/prev-index.svg");
+  width: 72px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: block;
+  cursor: pointer;
+}
+
+.next-index{
+  background-image: url("../../img/icons/prev-next.svg");
+  width: 72px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: block;
+  cursor: pointer;
+}
+
+.arrowIndex2 {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  position: absolute;
+  bottom: 10px;
+  left: -195px;
+
+  @include media-max(lg){
+    left: 0;
+    position: relative;
+    bottom: 0;
+    justify-content: center;
+    top: 50px;
+  }
+}
+
+
+.prev-index2{
+  background-image: url("../../img/icons/prev-index.svg");
+  width: 72px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: block;
+  cursor: pointer;
+}
+
+.next-index2{
+  background-image: url("../../img/icons/prev-next.svg");
+  width: 72px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: block;
+  cursor: pointer;
+}
+

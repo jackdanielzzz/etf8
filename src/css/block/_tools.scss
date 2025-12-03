@@ -1,0 +1,60 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.tools{
+  position: relative;
+  height: auto;
+  background: #004662;
+  padding: 95px 0 140px 0;
+
+  @include media-max(md){
+    padding: 75px 0 120px 0;
+  }
+}
+
+.tools-block{
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+
+  @include media-max(md){
+    margin-top: 42px;
+  }
+
+  @media (max-width: 375px){
+    justify-content: center;
+  }
+}
+
+.tools-item{
+  width: 193px;
+  height: 92px;
+  border: 1px solid #006a91;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover{
+    border: 1px solid #e0883c;
+    transition: all .2s;
+  }
+
+  @include media-max(sm){
+    border: 1px solid #006a91;
+    width: 169px;
+    height: 81px;
+  }
+}
+
+.tools-item img {
+  @include media-max(sm){
+    width: 75%;
+    min-height: auto;
+    object-fit: cover;
+  }
+}

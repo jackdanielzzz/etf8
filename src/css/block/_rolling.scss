@@ -1,0 +1,45 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.b-rolling-caption {
+  background: #e0883c;
+  color: white;
+  height: 74px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+
+  @include media-max(lg){
+    height: 46px;
+  }
+}
+
+.b-rolling-caption .b-rolling-caption__content {
+  position: relative;
+  left: 0;
+  width: 5000px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.b-rolling-caption .b-rolling-caption__wrap {
+  //display: none;
+  //overflow: hidden;
+  //position: relative;
+}
+
+.b-rolling-caption__content{
+  span{
+    font-weight: 400;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #fff;
+
+    @include media-max(lg){
+      font-size: 14px;
+    }
+  }
+}

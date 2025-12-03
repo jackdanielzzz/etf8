@@ -1,0 +1,115 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.works{
+  position: relative;
+  background: #004662;
+  padding: 120px 0;
+
+  @include media-max(lg){
+    padding: 80px 0;
+  }
+}
+
+.works-title{
+
+  width: 100%;
+  max-width: 425px;
+  margin-right: 50px;
+
+  @include media-max(lg){
+    max-width: 300px;
+  }
+
+  @include media-max(sm){
+    max-width: 100%;
+  }
+
+  h2{
+    margin: 0;
+    font-weight: 500;
+    line-height: 117%;
+    text-transform: uppercase;
+    color: #fff;
+
+    span{
+      color: #e0883c;
+    }
+  }
+}
+
+.works-description{
+
+  width: 100%;
+  max-width: 628px;
+
+  p + p{
+    margin: 0;
+  }
+
+  p{
+    font-weight: 300;
+    font-size: rem(16px);
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+
+.works-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @include media-max(md){
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+  }
+}
+
+.works-button  {
+  margin-top: -60px;
+
+  @include media-max(md){
+    margin-top: 90px;
+  }
+
+  @include media-max(sm){
+    width: 100%;
+  }
+
+
+  a{
+    color: #fff;
+    text-decoration: none;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 62px;
+    padding: 0 45px;
+    gap: 8px;
+    border: 1px solid #fff;
+    text-transform: uppercase;
+
+    @include media-max(sm){
+      width: 100%;
+    }
+
+    &:hover{
+      transition: all .2s;
+      border: 1px solid #e0883c;
+      background: #e0883c;
+    }
+  }
+
+
+  p{
+    margin: 0;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+}

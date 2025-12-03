@@ -1,0 +1,245 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.accordionBlock{
+  position: relative;
+  margin-top: 110px;
+
+  @include media-max(lg){
+    margin-top: 80px;
+  }
+
+
+  .accordionBlock-title{
+
+    margin-bottom: 70px;
+
+    h2{
+      margin: 0;
+      font-weight: 500;
+      font-size: 59px;
+      text-transform: uppercase;
+      color: #fff;
+
+      @include media-max(lg){
+        font-size: clamp(36px, 4vw, 59px);
+      }
+    }
+  }
+
+  .accordion-header{
+    margin: 0 auto !important;
+    width: 100%;
+    max-width: 1150px;
+  }
+
+  .accordion-button {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+
+    @include media-max(lg){
+      max-width: 1230px;
+      width: 94%;
+      position: relative;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    p{
+      margin: 0;
+
+      font-weight: 300;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.7);
+      width: 100%;
+      max-width: 628px;
+      text-align: left;
+    }
+
+    h5{
+      margin: 0;
+      font-weight: 500;
+      font-size: 26px;
+      color: #fff;
+
+      @include media-max(lg){
+        font-size: 24px;
+      }
+
+    }
+  }
+
+  .accordion-item {
+    background: #003a52;
+    border-top: 1px solid #006a91;
+    border-bottom: 1px solid #006a91;
+    position: relative;
+
+    padding: 65px 0 45px 0;
+
+    @media (max-width: 1400px){
+      padding: 65px 35px 45px 135px;
+    }
+
+    + .accordion-item{
+      border-top: none;
+    }
+
+    @include media-max(lg){
+      padding: 30px 0;
+    }
+
+    &:last-child{
+      border: none !important;
+    }
+  }
+
+
+  .accordion-item:hover .accordion-button .icon-accordion{
+    background-image: url("../../img/icons/arrow-accordion_hover.svg");
+    width: 81px;
+    height: 62px;
+    display: block;
+    transition: all .2s;
+
+    @include media-max(lg){
+      background-image: url("../../img/icons/arrow-accordion_mobile.svg");
+      width: 57px;
+      height: 46px;
+      display: block;
+    }
+  }
+
+  .accordion-item .accordion-button:not(.collapsed) .icon-accordion{
+    background-image: url("../../img/icons/arrow-accordion_hover.svg");
+    width: 81px;
+    height: 62px;
+    display: block;
+    transition: all .2s;
+
+    @include media-max(lg){
+      background-image: url("../../img/icons/arrow-accordion_mobile.svg");
+      width: 57px;
+      height: 46px;
+      display: block;
+    }
+  }
+
+  .accordion-button_arrow{
+    background-image: url("../../img/icons/arrow-bottom.svg");
+    width: 10px;
+    height: 6px;
+    display: block;
+  }
+
+  .accordion-item .accordion-button:not(.collapsed) .accordion-button_arrow{
+    transform: rotate(180deg);
+    transition: all .2s;
+  }
+
+
+
+
+
+
+  .accordion-body{
+    margin: 0 auto !important;
+    width: 100%;
+    max-width: 1150px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 72px;
+
+    @include media-max(lg){
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      margin: 40px auto 0 !important;
+      gap: 0;
+
+      max-width: 1230px;
+      width: 94%;
+      position: relative;
+    }
+
+    p{
+      margin: 0;
+
+      font-weight: 300;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.7);
+      width: 100%;
+      max-width: 628px;
+      text-align: left;
+
+      @include media-max(lg){
+        max-width: 100%;
+      }
+    }
+  }
+
+
+
+  .accordion-body_button{
+
+
+    @include media-max(lg){
+      margin-top: 45px;
+    }
+
+    @include media-max(sm){
+      width: 100%;
+    }
+
+    a{
+      margin: 0;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: normal;
+      text-transform: uppercase;
+      color: #fff;
+
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 45px;
+      background: transparent;
+      border: 1px solid white;
+
+      &:hover{
+        text-decoration: none;
+        background: #e0883c;
+        border: 1px solid #e0883c;
+        transition: all .2s;
+      }
+
+    }
+  }
+
+  .accordion-button_title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    left: -100px;
+
+    @include media-max(lg){
+      left: 0;
+    }
+  }
+
+  .accordion-button_text{
+    position: relative;
+    z-index: 10;
+  }
+
+
+}
+

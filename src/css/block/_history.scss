@@ -1,0 +1,281 @@
+@import "../misc/bootstrap";
+@import "../sprite";
+
+.history{
+  position: relative;
+  height: auto;
+
+  padding: 125px 0;
+
+  @include media-max(md){
+    padding: 85px 0 150px 0;
+  }
+}
+
+.slider-nav {
+  margin-top: 90px;
+
+  @include media-max(lg){
+    margin-top: 0;
+  }
+
+  .slick-slide{
+    background: transparent;
+    height: 69px;
+    border: 1px solid #006a91;
+    width: 166px;
+    margin-right: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    @include media-max(md){
+      width: 88px;
+      margin-right: 7px;
+      padding: 0;
+    }
+
+
+
+    div div{
+      font-weight: 500;
+      font-size: 18px;
+      color: #fff;
+    }
+
+  }
+}
+
+.slider-nav .slick-slide.slick-current.slick-active{
+  background: #e0883c;
+}
+
+.slider-nav .slick-prev.slick-arrow {
+
+  display: none !important;
+  //background-color: #006a91;
+  //height: 69px;
+  //border: 1px solid #006a91;
+  //width: 78px;
+  //
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  //cursor: pointer;
+  //
+  //left: -90px;
+  //
+  //
+  //@include media-max(md){
+  //  width: 67px;
+  //  right: -74px;
+  //}
+  //
+  //&::before{
+  //  content: '' !important;
+  //
+  //  background-image: url("../../img/icons/scroll-arrow.png");
+  //  width: 27px;
+  //  height: 11px;
+  //  display: block;
+  //  transform: rotate(180deg);
+  //}
+}
+
+.slider-nav .slick-next.slick-arrow{
+
+  background-color: #006a91;
+  height: 69px;
+  border: 1px solid #006a91;
+  width: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  right: -90px;
+
+
+  @include media-max(md){
+    width: 67px;
+    right: -74px;
+  }
+
+  &::before{
+    content: '' !important;
+
+    background-image: url("../../img/icons/scroll-arrow.png");
+    width: 27px;
+    height: 11px;
+    display: block;
+  }
+}
+
+
+.slider-nav_block {
+  @media (max-width: 1415px){
+    max-width: 1051px;
+  }
+
+  @media (max-width: 1180px){
+    max-width: 874px;
+  }
+
+  @media (max-width: 992px){
+    max-width: 697px;
+
+    position: absolute;
+    top: 0;
+    margin-top: 80px;
+  }
+
+  @include media-max(md){
+    max-width: 563px;
+  }
+
+  @media (max-width: 657px){
+    max-width: 373px;
+  }
+
+  @media (max-width: 462px){
+    max-width: 278px;
+  }
+
+  @media (max-width: 387px){
+    margin-top: 110px;
+  }
+
+  @media (max-width: 364px){
+    max-width: 183px;
+  }
+}
+
+
+.history-tab_title{
+
+  @include media-max(lg){
+    display: none;
+  }
+
+
+   h2{
+     font-weight: 500;
+     text-transform: uppercase;
+     color: #fff;
+
+     span{
+       color: #e0883c;
+     }
+   }
+}
+
+
+.history-tab_year{
+
+  span{
+    font-style: italic;
+    font-weight: 300;
+    font-size: 122px;
+    text-transform: uppercase;
+    color: #fff;
+
+    line-height: normal;
+
+    @include media-max(md){
+      font-size: 77px;
+    }
+  }
+}
+
+.history-tab_left{
+  width: 100%;
+  max-width: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.history-tab_right{
+  background: #004663;
+  padding: 30px 30px 60px 30px;
+}
+
+
+.history-tab {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+
+  @include media-max(lg){
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+  }
+}
+
+.history-tab_title2{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  p{
+    margin: 0;
+    font-weight: 500;
+    font-size: 26px;
+    color: #fff;
+
+  }
+}
+
+.history-tab_description{
+
+  width: 100%;
+  max-width: 620px;
+  margin-top: 40px;
+
+  @include media-max(lg){
+    max-width: 100%;
+  }
+
+  p{
+    font-weight: 300;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.slider-for{
+
+  @include media-max(lg){
+    padding-top: 150px;
+  }
+
+  @include media-max(md){
+    padding-top: 135px;
+  }
+}
+
+.history-title{
+
+  display: none;
+
+  @include media-max(lg){
+    display: block;
+  }
+
+  h2{
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+
+    span{
+      color: #e0883c;
+    }
+  }
+}
